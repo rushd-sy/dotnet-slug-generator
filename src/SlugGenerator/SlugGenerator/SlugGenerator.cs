@@ -2,11 +2,11 @@
 
 namespace SlugGenerator
 {
-    public class SlugGenerator
+    public static class SlugGenerator
     {
         public static string GenerateSlug(string input)
         {
-            return input;
+            throw new NotImplementedException();
         }
     }
 }
