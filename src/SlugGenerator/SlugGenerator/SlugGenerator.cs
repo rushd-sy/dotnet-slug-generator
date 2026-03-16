@@ -36,7 +36,7 @@ namespace SlugGenerator
                 throw ex;
 
             }
-            return new string(slug);
+            return slug;
             
         }
     }
