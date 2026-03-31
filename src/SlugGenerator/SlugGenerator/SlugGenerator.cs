@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace SlugGenerator
 {
@@ -6,31 +7,20 @@ namespace SlugGenerator
     {
         public static string GenerateSlug(string input)
         {
-            string slug = string.Empty;
             if (string.IsNullOrWhiteSpace(input))
             {
                 return string.Empty;
             }
-            for (int i = 0; i < input.Length; i++)
-            {
-                if (char.IsLetter(input[i]))
-                {
-                    slug += char.ToLower(input[i]);
-                }
-                else if((i==0 || i==input.Length-1)&&!char.IsLetter(input[i]))
-                {
-                    continue;
+            string slug = input.ToLower().Trim();
 
-                }
-                else if (!char.IsLetter(input[i]) && !char.IsLetter(input[i - 1]))
-                {
-                    continue;
-                }
-                else
-                {
-                    slug += '-';
-                }
-            }
+            slug = slug.Replace(" ", "-").Replace("_", "-");
+
+            slug = Regex.Replace(slug, @"[^a-z0-9\-]", "");
+
+            slug = Regex.Replace(slug, @"-+", "-");
+
+            slug = slug.Trim('-');
+
             return slug;
             
         }
