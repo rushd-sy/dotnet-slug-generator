@@ -10,11 +10,8 @@ namespace SlugGenerator
             {
                 return string.Empty;
             }
-
-            string slug = Regex.Replace(Regex.Replace(input.ToLower().Trim().Replace(" ",slugBy.ToString()).Replace("_",slugBy.ToString())
-                , @"[^a-z0-9" + Regex.Escape(slugBy.ToString()) + "]", "")
-                , $@"{Regex.Escape(slugBy.ToString())}+", $"{slugBy}").Trim(slugBy);
-
+            string slug= new string(input.ToLower().Trim().Select(c=> (char.IsWhiteSpace(c) || c=='_') ? slugBy : c)
+                .Where(c=> (char.IsLetterOrDigit(c) || c==slugBy)).ToArray());
 
             return slug;
             
