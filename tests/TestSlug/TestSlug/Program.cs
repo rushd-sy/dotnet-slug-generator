@@ -7,7 +7,7 @@ namespace SlugGenerator {
         public static void Main(string[] args)
         {
             string test = Console.ReadLine();
-            Console.WriteLine(SlugGenerator.GenerateSlug(test));
+           Console.WriteLine( test.GenerateSlug('-'));
 
         }
     }
