@@ -1,6 +1,4 @@
-﻿using System;
-using System.Text.RegularExpressions;
-using System.Linq;
+﻿using System.Text.RegularExpressions;
 
 namespace SlugGenerator
 {
@@ -13,11 +11,10 @@ namespace SlugGenerator
                 return string.Empty;
             }
 
-            string slug = input;
 
-            slug = Regex.Replace(Regex.Replace(input.ToLower().Trim().Replace(" ","_").Replace("-","_")
-                , @"[^a-z0-9_]", "")
-                , @"_+", "_").Trim('_');
+           string slug = Regex.Replace(Regex.Replace(input.ToLower().Trim().Replace(" ","-").Replace("_","-")
+                , @"[^a-z0-9-]", "")
+                , @"-+", "-").Trim('-');
 
 
             return slug;
