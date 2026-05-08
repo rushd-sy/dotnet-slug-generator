@@ -1,5 +1,6 @@
 ﻿using Xunit;
-using SlugGenerator;
+using SlugGenerator
+;
 
 public class SlugGeneratorTests
 {
@@ -17,7 +18,7 @@ public class SlugGeneratorTests
     {
         
         // Act
-        string result = input.GenerateSlug('-');
+        string result = input.GenerateUnique('-');
         // Assert
         Assert.Equal(expected, result);
     }

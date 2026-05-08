@@ -4,6 +4,15 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  
+	  <PackageId>Bashir.DotNet.SlugGenerator</PackageId>
+	  <Version>1.0.0</Version>
+	  <Authors>Bashir</Authors>
+	  <Company>Bashir</Company>
+	  <Description>A high-performance C# library for generating unique URL slugs using LINQ and Regex.</Description>
+	  <PackageTags>slug;url;dotnet;linq;backend</PackageTags>
+	  <RepositoryUrl>https://github.com/rushd-sy/dotnet-slug-generator</RepositoryUrl>	  
+	  
   </PropertyGroup>
 
 </Project>
